@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0B0620;
+    color: #FFFFFF;
+    min-height: 100vh;
+  }
+}
+
+/* CRT Scanlines and Film Grain */
+.crt-overlay {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.3) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.04),
+    rgba(0, 255, 0, 0.02),
+    rgba(0, 0, 255, 0.04)
+  );
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Neon Text Glows */
+.text-neon-pink {
+  text-shadow: 0 0 7px #FF2E93, 0 0 15px #FF2E93, 0 0 25px rgba(255, 46, 147, 0.6);
+}
+
+.text-neon-cyan {
+  text-shadow: 0 0 7px #00E5FF, 0 0 15px #00E5FF, 0 0 25px rgba(0, 229, 255, 0.6);
+}
+
+.text-neon-lime {
+  text-shadow: 0 0 7px #C6FF00, 0 0 15px #C6FF00, 0 0 25px rgba(198, 255, 0, 0.6);
+}
+
+.text-neon-yellow {
+  text-shadow: 0 0 7px #FFD60A, 0 0 15px #FFD60A, 0 0 25px rgba(255, 214, 10, 0.6);
+}
+
+/* Arcade Squish Button */
+.btn-arcade {
+  transition: all 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translate(0, 0);
+}
+.btn-arcade:hover {
+  transform: translate(-2px, -2px);
+  filter: brightness(1.1);
+}
+.btn-arcade:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0px #000 !important;
+}
+
+/* Custom Cyberpunk Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0620;
+}
+::-webkit-scrollbar-thumb {
+  background: #2A1D5C;
+  border: 1px solid #FF2E93;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF2E93;
+}
+
+/* 3D Holo Card Flip */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
